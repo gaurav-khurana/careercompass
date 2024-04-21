@@ -1,0 +1,64 @@
+// Color Pallete
+
+// primary colors
+
+$color-primary-green: #c8ff80; // Xbox-green: Primary text color
+$color-primary-blue: #1766ff; // PS-Blue: Primart CTA. Active form field outline
+$color-primary-white: #ffffff; // White: logo color, website name
+
+// secondary colors
+
+$color-secondary-black: #0d1117; // black: background landing
+$color-secondary-dark-grey: #212932; // Dark-grey: background rest pages
+
+// typography - mobile
+
+// landing page  logo 2.6rem LH-2.3rem opnevault - 2.1rem L.H 2.1rem both 600; logo rest same F 2.6,LH 2.3 700
+// navigation, ps + xbox product page title, xbox PS 10rem LH 10rem 700
+// PS product page- icon 2.4rem LH 2.1rem 700; game title F,LH 2.1rem 700
+
+$mob-font-heading: 5rem;
+$mob-font-sub-heading: 3.4rem;
+$mob-font-logo: 2.6rem;
+$mob-font-sub-heading: 2.4rem;
+$mob-font-text: 2.1rem;
+$mob-font-body: 1.8rem;
+
+// typography - tablet & desktop
+
+// $desk-font-header: 3.3rem;
+// $desk-font-section-header: 1.2rem;
+// $desk-font-subheader-body: 1.4rem;
+// $desk-font-label-button: 1.2rem;
+
+// PADDING OR MARGIN - MOBILE
+
+$spacing-small: 0.8rem;
+$padding-small: 1.2rem;
+$padding-big: 1.6rem;
+$mob-spacing-big: 2.4rem;
+
+// PADDING OR MARGIN - TABLET-DESKTOP
+
+$desk-spacing-big: 3.6rem;
+$desk-spacing-small: 2.4rem;
+
+// BUTTONS
+
+$button-height: 4rem;
+$button-width-tablet: 15rem;
+$button-width-mobile: 3.2rem;
+$button-radius: 4px;
+$image-radius: 16px;
+
+// DIVIDER
+
+// $divider-color: $color-secondary-mercury;
+$divider-width: 1px;
+
+// SCREEN SIZE - TABLET & DESKTOP
+
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-landscape: 940px;
+$breakpoint-desktop: 1279px;

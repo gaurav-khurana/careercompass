@@ -4,41 +4,49 @@
 // TYPOGRAPHY
 
 @font-face {
-  font-family: "IBMPlexMono";
-  src: url("../../assets/fonts/IBMPlexMono-Regular.woff") format(woff);
+  font-family: "Calibre";
+  src: url("../assets/fonts/Calibre-Regular.woff") format(woff);
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
-  font-family: "IBMPlexMono";
-  src: url("../../assets/fonts/IBMPlexMono-SemiBold.woff") format(woff);
+  font-family: "Calibre";
+  src: url("../assets/fonts/Calibre-Semibold.woff") format(woff);
   font-style: normal;
   font-weight: 600;
 }
-@font-face {
-  font-family: "IBMPlexMono";
-  src: url("../../assets/fonts/IBMPlexMono-Bold.woff") format(woff);
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "IBMPlexMono";
-  src: url("../../assets/fonts/IBMPlexMono-Light.woff") format(woff);
-  font-style: normal;
-  font-weight: 300;
-}
 
-// mobile styles
-
-.homepage__title,
-.navigation__title,
-.ps-hero__logo,
-.xbox-hero__logo,
-.ps-game-header__logo,
-.xbox-game-header__logo {
+.navbar__title {
   font-size: $mob-font-logo;
   // line-height: 2.3rem;/
   font-weight: 600;
+}
+
+.homepage__title {
+  font-size: $mob-font-heading;
+  line-height: 10rem;
+  font-weight: 600;
+}
+
+.homepage__subtext,
+.jobCard__company,
+.jobCard__position {
+  font-size: $mob-font-sub-heading;
+  line-height: 4rem;
+  font-weight: 600;
+}
+
+.homepage__button,
+.btn__search,
+.btn__add,
+.btn__applied,
+.btn__details,
+.jobCard__date,
+.jobCard__status,
+.searchBar__input {
+  font-size: $mob-font-body;
+  line-height: 2.4rem;
+  font-weight: 400;
 }
 
 .homepage__text,
@@ -54,50 +62,4 @@
   font-size: $mob-font-text;
   line-height: 2.1rem;
   font-weight: 600;
-}
-
-.body__title,
-.ps-hero__title,
-.xbox-hero__title,
-.ps-game-header__title,
-.xbox-game-header__title,
-.checkout__title {
-  font-size: $mob-font-heading;
-  line-height: 10rem;
-  font-weight: 700;
-}
-
-.ps-icon__text,
-.xbox-icon__text,
-.gamecard__title,
-.ps-game-price__button-subtitle,
-.xbox-game-price__button-subtitle,
-.ps-game-price__button-icon,
-.xbox-game-price__button-icon,
-.confirmation__title {
-  font-size: $mob-font-sub-heading;
-  line-height: 2.1rem;
-  font-weight: 700;
-}
-
-.ps-game-about__title,
-.xbox-game-about__title,
-.ps-game-price__title,
-.xbox-game-price__title,
-.ps-game-capabilities__text,
-.xbox-game-capabilities__text,
-.checkout-cart__title {
-  font-size: $mob-font-sub-heading;
-  line-height: 4rem;
-  font-weight: 600;
-}
-
-.ps-game-description__text,
-.xbox-game-description__text,
-.checkout-accordian__label,
-.confirmation__text,
-.confirmation__btn {
-  font-size: $mob-font-body;
-  line-height: 2.4rem;
-  font-weight: 400;
 }

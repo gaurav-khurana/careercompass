@@ -1,0 +1,38 @@
+@use "../../stylesPartials/variables" as *;
+@use "../../stylesPartials/mixins" as *;
+
+.homepage {
+  &-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-secondary-light-blue;
+
+    @include flexbox(column, center, center);
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__title {
+    color: $color-secondary-dark-grey;
+  }
+
+  &__subtext {
+    margin-bottom: $padding-big;
+    color: $color-secondary-dark-grey;
+  }
+
+  &__button {
+    // width: 15vw;
+    padding: $padding-small;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-secondary-dark-blue;
+      color: white;
+      border: 0;
+    }
+  }
+}

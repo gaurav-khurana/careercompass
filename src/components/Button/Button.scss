@@ -1,0 +1,25 @@
+@use "../../stylesPartials/mixins" as *;
+@use "../../stylesPartials/variables" as *;
+
+.btn {
+  height: $button-height;
+  width: 10vw;
+  border-radius: $button-radius;
+  border: 0;
+  cursor: pointer;
+
+  &__search {
+  }
+
+  &__add {
+    &-container {
+      //   vertical-align: middle;
+    }
+  }
+
+  &__applied {
+  }
+
+  &__details {
+  }
+}

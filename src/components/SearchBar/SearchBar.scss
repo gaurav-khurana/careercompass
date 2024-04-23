@@ -1,0 +1,38 @@
+@use "../../stylesPartials/variables" as *;
+@use "../../stylesPartials/mixins" as *;
+
+.searchBar {
+  width: 20vw;
+  height: 5vh;
+  border: $divider-width solid $color-secondary-black;
+  border-radius: $button-radius;
+  padding: $spacing-small;
+  margin-left: 20vw;
+
+  @include flexbox(row, flex-start, center);
+
+  &__icon {
+    width: 17px;
+    height: 17px;
+    margin-right: $spacing-small;
+  }
+
+  &__input {
+    background-color: $color-secondary-light-blue;
+    height: 3.5rem;
+    width: 16vw;
+    border: 0;
+
+    &::placeholder {
+      color: $color-secondary-black;
+      //   margin-top: 7px;
+      //   padding-top: 7px;
+    }
+
+    &:focus,
+    &:active {
+      border: 0;
+      outline: 0;
+    }
+  }
+}

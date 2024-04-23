@@ -1,0 +1,46 @@
+@use "../../stylesPartials/variables" as *;
+@use "../../stylesPartials/mixins" as *;
+
+.jobCard {
+  &-container {
+    width: 15vw;
+    height: 32rem;
+    // border: $divider-width solid $divider-color;
+    padding: $spacing-big;
+    background-color: $color-secondary-dark-blue;
+    color: $color-primary-white;
+    margin: 2rem;
+    border-radius: $button-radius;
+
+    @include flexbox(column, flex-start, flex-start);
+  }
+
+  &__company {
+    margin-bottom: $padding-small;
+  }
+
+  &__position {
+    margin-bottom: $padding-small;
+  }
+
+  &__date {
+    margin-bottom: $padding-small;
+  }
+
+  &__status {
+    width: 10vw;
+    padding: $spacing-small;
+    text-align: center;
+    color: $color-primary-white;
+    border-radius: $spacing-small;
+    margin-bottom: $padding-small;
+
+    &--applied {
+      background-color: $color-primary-green;
+    }
+
+    &--rejected {
+      background-color: $color-primary-red;
+    }
+  }
+}

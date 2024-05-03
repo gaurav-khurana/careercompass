@@ -1,21 +1,29 @@
 import "./JobCard.scss";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
+import JobCardInterface from "../../interfaces/interface";
 
-interface Props {
-  id: number;
-  company_name: string;
-  job_position: string;
-  date: string;
-  status: string;
-}
+// interface Props {
+//   id: number;
+//   company_name: string;
+//   job_position: string;
+//   date: string;
+//   status: string;
+// }
+
 //  option 1 for interface use function JobCard({ job }: Props) {}
 //  and from parent pass entire job obj down as props
 // interface Props {
 //   job: any;
 // }
 
-function JobCard({ id, company_name, job_position, date, status }: Props) {
+function JobCard({
+  id,
+  company_name,
+  job_position,
+  date,
+  status,
+}: JobCardInterface) {
   const navigate = useNavigate();
 
   function handleJobDetails(event: MouseEvent) {

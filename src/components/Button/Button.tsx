@@ -2,7 +2,8 @@ import "./Button.scss";
 
 interface Props {
   containerClassName: string;
-  buttonType: any;
+  buttonClassName: string;
+  buttonType: "submit" | "button" | "reset";
   buttonText: string;
   buttonHandler: () => void;
 }

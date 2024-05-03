@@ -1,0 +1,20 @@
+@use "../../stylesPartials/variables" as *;
+@use "../../stylesPartials/mixins" as *;
+
+.jobDetails {
+  &-container {
+    width: 100vw;
+    height: 90vh;
+    padding: $spacing-big;
+    background-color: rgba(124, 175, 196, 0.5);
+
+    @include flexbox(column, flex-start, flex-start);
+  }
+}
+
+h2,
+h3,
+p,
+button {
+  font-size: 20px;
+}

@@ -2,11 +2,14 @@ import "./Navbar.scss";
 import logo from "../../assets/images/compasslogo2.png";
 import SearchBar from "../SearchBar/SearchBar";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+
   function handleAddButton(event: MouseEvent) {
     console.log(event.target);
+    navigate("/addjob");
   }
 
   function handleAppliedJobs(event: MouseEvent) {

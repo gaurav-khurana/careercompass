@@ -1,0 +1,24 @@
+@use "../../stylesPartials/variables" as *;
+@use "../../stylesPartials/mixins" as *;
+
+.job-form {
+  @include flexbox(column, flex-start, flex-start);
+
+  &-container {
+    width: 100vw;
+    height: 90vh;
+    padding: $spacing-big;
+    background-color: rgba(124, 175, 196, 0.5);
+  }
+
+  &-btn-container {
+    @include flexbox(row, flex-start, flex-start);
+  }
+}
+
+h2,
+label,
+input,
+button {
+  font-size: 20px;
+}

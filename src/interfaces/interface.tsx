@@ -6,7 +6,7 @@ export interface JobCardInterface {
   status: string;
 }
 export interface JobDetailsInterface {
-  id: number;
+  id?: number;
   company_name: string;
   job_position: string;
   date: string;
@@ -14,4 +14,8 @@ export interface JobDetailsInterface {
   role: string;
   duties: string;
   requirements: string;
+}
+
+export interface getNewJobProps {
+  getNewJob: JobDetailsInterface;
 }

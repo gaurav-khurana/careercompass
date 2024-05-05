@@ -8,6 +8,11 @@
   border: 0;
   cursor: pointer;
 
+  &:hover {
+    background-color: $color-secondary-dark-blue;
+    color: $color-primary-white;
+  }
+
   &__search {
   }
 
@@ -22,5 +27,10 @@
 
   &__details {
     width: 13.5vw;
+  }
+
+  &__job-form {
+    margin-inline: auto;
+    margin-right: $spacing-small;
   }
 }

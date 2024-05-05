@@ -38,24 +38,28 @@ function JobDetailsPage() {
       <Navbar />
 
       <section className="jobDetails-container">
-        <h2>Company name: {singleJob?.company_name}</h2>
-
-        <h2>Job Position: {singleJob?.job_position}</h2>
-        <h3>Status: {singleJob?.status}</h3>
-        <h2>Role</h2>
-        <p>{singleJob?.role}</p>
-        <h3>Duties</h3>
-        <p>{singleJob?.duties}</p>
-        <h3>Requirements</h3>
-        <p>{singleJob?.requirements}</p>
-
-        <Button
-          containerClassName="jobDetails__button"
-          buttonClassName="btn__jobDetails"
-          buttonType="button"
-          buttonText="Back"
-          buttonHandler={handleJobDetails}
-        />
+        <div className="jobDetails-text-container">
+          <h2 className="jobDetails__title">
+            Company name: {singleJob?.company_name}
+          </h2>
+          <h2 className="jobDetails__title">
+            Job Position: {singleJob?.job_position}
+          </h2>
+          <h3 className="jobDetails__title">Status: {singleJob?.status}</h3>
+          <h2 className="jobDetails__title">Role</h2>
+          <p className="jobDetails__text">{singleJob?.role}</p>
+          <h3 className="jobDetails__title">Duties</h3>
+          <p className="jobDetails__text">{singleJob?.duties}</p>
+          <h3 className="jobDetails__title">Requirements</h3>
+          <p className="jobDetails__text">{singleJob?.requirements}</p>
+          <Button
+            containerClassName="jobDetails__button"
+            buttonClassName="btn__jobDetails"
+            buttonType="button"
+            buttonText="Back"
+            buttonHandler={handleJobDetails}
+          />
+        </div>
       </section>
     </>
   );

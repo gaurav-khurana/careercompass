@@ -4,17 +4,26 @@
 .jobDetails {
   &-container {
     width: 100vw;
-    height: 90vh;
+    // height: 90vh;
     padding: $spacing-big;
     background-color: rgba(124, 175, 196, 0.5);
+  }
+
+  &-text-container {
+    width: 60vw;
+    width: 50vw;
+    margin-inline: auto;
 
     @include flexbox(column, flex-start, flex-start);
   }
-}
 
-h2,
-h3,
-p,
-button {
-  font-size: 20px;
+  &__title {
+    margin-bottom: $padding-big;
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: $padding-big;
+  }
 }

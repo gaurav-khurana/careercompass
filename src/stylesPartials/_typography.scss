@@ -16,22 +16,25 @@
   font-weight: 600;
 }
 
-.navbar__title {
-  font-size: $mob-font-logo;
-  // line-height: 2.3rem;/
-  font-weight: 600;
-}
-
 .homepage__title {
   font-size: $mob-font-heading;
   line-height: 10rem;
   font-weight: 600;
 }
 
+.navbar__title,
+.jobDetails__title {
+  font-size: $mob-font-logo;
+  line-height: 2.3rem;
+  font-weight: 600;
+}
+
 .homepage__subtext,
 .jobCard__company,
-.jobCard__position {
-  font-size: $mob-font-sub-heading;
+.jobCard__position,
+.jobCard__status,
+.jobDetails__text {
+  font-size: $mob-font-text;
   line-height: 4rem;
   font-weight: 600;
 }
@@ -42,24 +45,23 @@
 .btn__applied,
 .btn__details,
 .jobCard__date,
-.jobCard__status,
 .searchBar__input {
   font-size: $mob-font-body;
   line-height: 2.4rem;
   font-weight: 400;
 }
 
-.homepage__text,
-.ps-game-about__subtitle,
-.xbox-game-about__subtitle,
-.ps-game-price__subtitle,
-.xbox-game-price__subtitle,
-.ps-game-capabilities__title,
-.xbox-game-capabilities__title,
-.ps-game-description__title,
-.xbox-game-description__title,
-.MuiAccordionSummary-content {
-  font-size: $mob-font-text;
-  line-height: 2.1rem;
-  font-weight: 600;
-}
+// .homepage__text,
+// .ps-game-about__subtitle,
+// .xbox-game-about__subtitle,
+// .ps-game-price__subtitle,
+// .xbox-game-price__subtitle,
+// .ps-game-capabilities__title,
+// .xbox-game-capabilities__title,
+// .ps-game-description__title,
+// .xbox-game-description__title,
+// .MuiAccordionSummary-content {
+//   font-size: $mob-font-text;
+//   line-height: 2.1rem;
+//   font-weight: 600;
+// }

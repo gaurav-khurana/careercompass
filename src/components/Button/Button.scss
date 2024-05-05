@@ -7,6 +7,7 @@
   border-radius: $button-radius;
   border: 0;
   cursor: pointer;
+  transition: 0.2s;
 
   &:hover {
     background-color: $color-secondary-dark-blue;
@@ -27,6 +28,11 @@
 
   &__details {
     width: 13.5vw;
+
+    &:hover {
+      background-color: $color-secondary-light-blue;
+      color: $color-primary-white;
+    }
   }
 
   &__job-form {

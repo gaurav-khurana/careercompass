@@ -17,6 +17,17 @@
 
   &__company {
     margin-bottom: $padding-small;
+
+    &-container {
+      width: 13.5vw;
+      @include flexbox(row, space-between, flex-start);
+    }
+  }
+
+  &__edit {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
   }
 
   &__position {

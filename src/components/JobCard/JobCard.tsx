@@ -1,7 +1,8 @@
 import "./JobCard.scss";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
-import JobCardInterface from "../../interfaces/interface";
+import { JobCardInterface } from "../../interfaces/interface";
+import EditIcon from "../../assets/icons/edit-circle.svg";
 
 // interface Props {
 //   id: number;
@@ -34,7 +35,10 @@ function JobCard({
   return (
     <>
       <div className="jobCard-container">
-        <h2 className="jobCard__company">{company_name}</h2>
+        <div className="jobCard__company-container">
+          <h2 className="jobCard__company">{company_name}</h2>
+          <img className="jobCard__edit" src={EditIcon} alt="Edit icon" />
+        </div>
 
         <h2 className="jobCard__position">{job_position}</h2>
 

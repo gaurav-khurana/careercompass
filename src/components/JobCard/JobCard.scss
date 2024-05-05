@@ -3,8 +3,8 @@
 
 .jobCard {
   &-container {
-    width: 15vw;
-    height: 32rem;
+    width: 17vw;
+    height: 35rem;
     // border: $divider-width solid $divider-color;
     padding: $spacing-big;
     background-color: $color-secondary-dark-blue;
@@ -12,7 +12,7 @@
     margin: 2rem;
     border-radius: $button-radius;
 
-    @include flexbox(column, flex-start, flex-start);
+    @include flexbox(column, space-between, flex-start);
   }
 
   &__company {
@@ -28,11 +28,15 @@
   }
 
   &__status {
-    width: 10vw;
+    width: 7vw;
+    width: 13.5vw;
+    // width: 100%;
+    // height: 5rem;
     padding: $spacing-small;
     text-align: center;
+    font-weight: 600;
     color: $color-primary-white;
-    border-radius: $spacing-small;
+    border-radius: 30px;
     margin-bottom: $padding-small;
 
     &--applied {

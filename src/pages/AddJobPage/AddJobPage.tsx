@@ -1,93 +1,66 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button/Button";
-import Navbar from "../../components/Navbar/Navbar";
 import "./AddJobPage.scss";
-import { useState } from "react";
+// import axios from "axios";
 import { JobDetailsInterface } from "../../interfaces/interface";
-import axios from "axios";
+import Navbar from "../../components/Navbar/Navbar";
+import JobForm from "../../components/JobForm/JobForm";
+import { postNewJob } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 function AddJobPage() {
   // navigation hook
   const navigate = useNavigate();
 
-  // state for form
-  const [companyName, setCompanyName] = useState("");
-  const [positionName, setPositionName] = useState("");
-  const [date, setDate] = useState("");
-  const [status, setStatus] = useState("");
-  const [role, setRole] = useState("");
-  const [duties, setDuties] = useState("");
-  const [requirements, setRequirements] = useState("");
+  // // state for form
+  // const [companyName, setCompanyName] = useState("");
+  // const [positionName, setPositionName] = useState("");
+  // const [date, setDate] = useState("");
+  // const [status, setStatus] = useState("");
+  // const [role, setRole] = useState("");
+  // const [duties, setDuties] = useState("");
+  // const [requirements, setRequirements] = useState("");
+  // const [newJobDetails, setNewJobDetails] = useState({
+  //   company_name: "",
+  //   job_position: "",
+  //   date: "",
+  //   status: "",
+  //   role: "",
+  //   duties: "",
+  //   requirements: "",
+  // });
 
   // get values from form
-  function handleCompanyName(event: MouseEvent) {
-    console.log(event.target.value);
-    setCompanyName(event.target.value);
-  }
+  // function handleCompanyName(event: MouseEvent) {
+  // function handleCompanyName(event) {
+  // WORKS FINE BUT USED ANONYMOUS CALLBACK IN onChange directly
+  // function handleCompanyName(event: {
+  //   target: { value: SetStateAction<string> };
+  // }) {
+  //   console.log(event.target.value);
+  //   setCompanyName(event.target.value);
+  //   // setNewJobDetails(...newJobDetails, (company_name = event.target.value));
+  // }
 
-  function handlePositionName(event: MouseEvent) {
-    console.log(event.target.value);
-    setPositionName(event.target.value);
-  }
+  // // handler to cancel form
+  // function handleCancelForm() {
+  //   // console.log(event.target);
+  //   navigate("/dashboard");
+  // }
 
-  function handleDate(event: MouseEvent) {
-    console.log(event.target.value);
-    setDate(event.target.value);
-  }
+  // extract to services file
+  // async function postNewJob(newJob: JobDetailsInterface) {
+  //   const response = await axios.post(
+  //     "http://localhost:8080/dashboard",
+  //     newJob
+  //   );
+  //   console.log(response);
+  // }
 
-  function handleStatus(event: MouseEvent) {
-    console.log(event.target.value);
-    setStatus(event.target.value);
-  }
-
-  function handleRole(event: MouseEvent) {
-    console.log(event.target.value);
-    setRole(event.target.value);
-  }
-
-  function handleDuties(event: MouseEvent) {
-    console.log(event.target.value);
-    setDuties(event.target.value);
-  }
-
-  function handleRequirements(event: MouseEvent) {
-    console.log(event.target.value);
-    setRequirements(event.target.value);
-  }
-
-  // handler to cancel form
-  function handleCancelForm() {
-    // console.log(event.target);
-    navigate("/dashboard");
-  }
-
-  async function postNewJob(newJob: JobDetailsInterface) {
-    const response = await axios.post(
-      "http://localhost:8080/dashboard",
-      newJob
-    );
-    console.log(response);
-  }
-
-  // handler to form submission
-  function handleJobForm(event: MouseEvent) {
-    event.preventDefault();
-    // console.log(event.target);
-
-    const newJob: JobDetailsInterface = {
-      company_name: companyName,
-      job_position: positionName,
-      date: date,
-      role: role,
-      status: status,
-      duties: duties,
-      requirements: requirements,
-    };
-
+  // event to submit form for axios call; pass this to JobForm & get newJob here
+  function getNewJob(newJob: JobDetailsInterface) {
     console.log(newJob);
 
     try {
-      postNewJob(newJob);
+      postNewJob(newJob); // axios call here or from services
     } catch (error) {
       console.log("Failed to Post Job");
     }
@@ -95,97 +68,166 @@ function AddJobPage() {
     navigate("/dashboard");
   }
 
+  // // handler to form submission
+  // function handleJobForm(event: React.FormEvent) {
+  //   event.preventDefault();
+
+  //   if (
+  //     companyName &&
+  //     positionName &&
+  //     date &&
+  //     role &&
+  //     status &&
+  //     duties &&
+  //     requirements
+  //   ) {
+  //     const newJob: JobDetailsInterface = {
+  //       company_name: companyName,
+  //       job_position: positionName,
+  //       date: date,
+  //       role: role,
+  //       status: status,
+  //       duties: duties,
+  //       requirements: requirements,
+  //     };
+
+  //     console.log(newJob);
+  //     getnewJob(newJob);
+
+  //     try {
+  //       postNewJob(newJob);
+  //     } catch (error) {
+  //       console.log("Failed to Post Job");
+  //     }
+
+  //     navigate("/dashboard");
+  //   }
+  // }
+
   return (
     <>
       <Navbar />
 
       <section className="job-form-container">
-        <form className="job-form">
-          {/* onSubmit={handleJobForm} */}
+        <h2 className="job-form__title">Add New Job Posting</h2>
 
-          <label htmlFor="companyName">Company Name</label>
-          <input
-            type="text"
-            name="companyName"
-            id="companyName"
-            required
-            onChange={handleCompanyName}
-          />
+        <JobForm getNewJob={getNewJob} />
 
-          <label htmlFor="positionName">Job Position</label>
-          <input
-            type="text"
-            name="positionName"
-            id="positionName"
-            required
-            onChange={handlePositionName}
-          />
-
-          <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-            required
-            onChange={handleDate}
-          />
-
-          <label htmlFor="status">Status</label>
-          <input
-            type="text"
-            name="status"
-            id="status"
-            required
-            onChange={handleStatus}
-          />
-
-          <label htmlFor="role">Role</label>
+        {/* <form className="job-form" onSubmit={handleJobForm}>
+          <label className="job-form__label" htmlFor="companyName">
+            Company Name
+            <input
+              className="job-form__input"
+              type="text"
+              name="companyName"
+              id="companyName"
+              value={companyName}
+              // onChange={handleCompanyName}
+              onChange={(event) => setCompanyName(event.target.value)}
+              required
+            />
+          </label>
+          <label className="job-form__label" htmlFor="positionName">
+            Job Position
+            <input
+              className="job-form__input"
+              type="text"
+              name="positionName"
+              id="positionName"
+              value={positionName}
+              // onChange={handlePositionName}
+              onChange={(event) => setPositionName(event.target.value)}
+              required
+            />
+          </label>
+          <label className="job-form__label" htmlFor="date">
+            Date
+            <input
+              className="job-form__input"
+              type="date"
+              name="date"
+              id="date"
+              value={date}
+              // onChange={handleDate}
+              onChange={(event) => setDate(event.target.value)}
+              required
+            />
+          </label>
+          <label className="job-form__label" htmlFor="status">
+            Status
+            <input
+              className="job-form__input"
+              type="text"
+              name="status"
+              id="status"
+              value={status}
+              // onChange={handleStatus}
+              onChange={(event) => setStatus(event.target.value)}
+              required
+            />
+            <input type="checkbox" name="status" id="status" />
+          </label>
+          <label className="job-form__label" htmlFor="role">
+            Role
+          </label>
           <textarea
+            className="job-form__textarea"
             name="role"
             id="role"
+            value={role}
             cols={30}
             rows={10}
+            // onChange={handleRole}
+            onChange={(event) => setRole(event.target.value)}
             required
-            onChange={handleRole}
           ></textarea>
-
-          <label htmlFor="duties">Duties</label>
+          <label className="job-form__label" htmlFor="duties">
+            Duties
+          </label>
           <textarea
+            className="job-form__textarea"
             name="duties"
             id="duties"
+            value={duties}
             cols={30}
             rows={10}
+            // onChange={handleDuties}
+            onChange={(event) => setDuties(event.target.value)}
             required
-            onChange={handleDuties}
           ></textarea>
-
-          <label htmlFor="requirements">Requirements</label>
+          <label className="job-form__label" htmlFor="requirements">
+            Requirements
+          </label>
           <textarea
+            className="job-form__textarea"
             name="requirements"
             id="requirements"
+            value={requirements}
             cols={30}
             rows={10}
+            // onChange={handleRequirements}
+            onChange={(event) => setRequirements(event.target.value)}
             required
-            onChange={handleRequirements}
           ></textarea>
-        </form>
+        </form> */}
 
-        <div className="job-form-btn-container">
+        {/* <div className="job-form-btn-container">
           <Button
-            containerClassName="jobForm__button--reset"
-            buttonClassName="btn__jobForm"
+            containerClassName="job-form__button--reset"
+            buttonClassName="btn__job-form"
             buttonType="reset"
             buttonText="Cancel"
             buttonHandler={handleCancelForm}
-          />
-          <Button
-            containerClassName="jobForm__button--submit"
-            buttonClassName="btn__jobForm"
+          /> */}
+
+        {/* <Button
+            containerClassName="job-form__button--submit"
+            buttonClassName="btn__job-form"
             buttonType="submit"
             buttonText="Add Job"
-            buttonHandler={handleJobForm}
-          />
-        </div>
+            // buttonHandler={handleJobForm}
+          /> */}
+        {/* </div> */}
       </section>
     </>
   );

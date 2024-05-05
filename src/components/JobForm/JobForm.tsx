@@ -47,11 +47,11 @@ function JobForm({ getNewJob }: getNewJobProps) {
   // navigation hook
   const navigate = useNavigate();
 
-  // handler to cancel form
-  function handleCancelForm() {
-    // console.log(event.target);
-    navigate("/dashboard");
-  }
+  // handler to cancel form (anon callback from btn)
+  // function handleCancelForm() {
+  //   // console.log(event.target);
+  //   navigate("/dashboard");
+  // }
 
   return (
     <>
@@ -157,7 +157,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
             buttonClassName="btn__job-form"
             buttonType="reset"
             buttonText="Cancel"
-            buttonHandler={handleCancelForm}
+            // buttonHandler={handleCancelForm}
+            buttonHandler={() => navigate("/dashboard")}
           />
 
           <button className="btn btn__job-form" type="submit">

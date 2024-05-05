@@ -2,23 +2,43 @@
 @use "../../stylesPartials/mixins" as *;
 
 .job-form {
+  width: 30vw;
+  margin-inline: auto;
   @include flexbox(column, flex-start, flex-start);
 
   &-container {
     width: 100vw;
-    height: 90vh;
+    // height: 90vh;
     padding: $spacing-big;
     background-color: rgba(124, 175, 196, 0.5);
+    @include flexbox(column, flex-start, flex-start);
   }
 
   &-btn-container {
     @include flexbox(row, flex-start, flex-start);
+    margin-inline: auto;
   }
-}
+  &__title {
+    margin-inline: auto;
+    margin-bottom: $spacing-small;
+  }
+  &__label {
+    margin-bottom: $spacing-small;
+  }
 
-h2,
-label,
-input,
-button {
-  font-size: 20px;
+  &__input,
+  &__textarea {
+    margin-bottom: $padding-small;
+    padding: $spacing-small;
+  }
+
+  &__input {
+    margin-left: $spacing-big;
+  }
+
+  &__textarea {
+    width: 30vw;
+    height: 10rem;
+    resize: none;
+  }
 }

@@ -22,6 +22,12 @@
   font-weight: 600;
 }
 
+.job-form__title {
+  font-size: $mob-font-sub-heading;
+  line-height: 4rem;
+  font-weight: 600;
+}
+
 .navbar__title,
 .jobDetails__title {
   font-size: $mob-font-logo;
@@ -44,8 +50,13 @@
 .btn__add,
 .btn__applied,
 .btn__details,
+.btn__jobDetails,
+.btn__job-form,
 .jobCard__date,
-.searchBar__input {
+.searchBar__input,
+.job-form__label,
+.job-form__input,
+.job-form__textarea {
   font-size: $mob-font-body;
   line-height: 2.4rem;
   font-weight: 400;

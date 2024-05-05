@@ -39,19 +39,34 @@ function JobDetailsPage() {
 
       <section className="jobDetails-container">
         <div className="jobDetails-text-container">
+          <h2 className="jobDetails__title">{singleJob?.company_name}</h2>
+
           <h2 className="jobDetails__title">
-            Company name: {singleJob?.company_name}
+            {/* Job Position: {singleJob?.job_position} */}
+            {singleJob?.job_position}
           </h2>
-          <h2 className="jobDetails__title">
-            Job Position: {singleJob?.job_position}
-          </h2>
-          <h3 className="jobDetails__title">Status: {singleJob?.status}</h3>
+
+          {/* <h3 className="jobDetails__title">Status: {singleJob?.status}</h3> */}
+          {singleJob?.status === "Applied" ? (
+            <h3 className="jobDetails__title status status--applied">
+              {singleJob?.status}
+            </h3>
+          ) : (
+            <h3 className="jobDetails__title status status--rejected">
+              {singleJob?.status}
+            </h3>
+          )}
+          {/* <h3 className="jobDetails__title">{singleJob?.status}</h3> */}
+
           <h2 className="jobDetails__title">Role</h2>
           <p className="jobDetails__text">{singleJob?.role}</p>
+
           <h3 className="jobDetails__title">Duties</h3>
           <p className="jobDetails__text">{singleJob?.duties}</p>
+
           <h3 className="jobDetails__title">Requirements</h3>
           <p className="jobDetails__text">{singleJob?.requirements}</p>
+
           <Button
             containerClassName="jobDetails__button"
             buttonClassName="btn__jobDetails"

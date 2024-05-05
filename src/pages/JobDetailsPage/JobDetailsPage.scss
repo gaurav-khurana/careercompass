@@ -26,4 +26,27 @@
     line-height: 1.5;
     margin-bottom: $padding-big;
   }
+
+  &__button {
+    align-self: center;
+  }
+}
+
+.status {
+  width: 10vw;
+  padding: $spacing-small;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 30px;
+  margin-bottom: $padding-big;
+
+  &--applied {
+    background-color: $color-primary-green;
+    color: $color-primary-white;
+  }
+
+  &--rejected {
+    background-color: $color-primary-red;
+    color: $color-primary-white;
+  }
 }

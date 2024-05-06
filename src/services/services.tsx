@@ -18,3 +18,12 @@ export async function postNewJob(newJob: JobDetailsInterface) {
   console.log(response);
   return response.data;
 }
+
+export async function editJobPosting(newJob: JobDetailsInterface, id: number) {
+  const response = await axios.put(
+    `http://localhost:8080/dashboard/${id}`,
+    newJob
+  );
+  console.log(response.data);
+  return response.data;
+}

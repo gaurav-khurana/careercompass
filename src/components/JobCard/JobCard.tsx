@@ -1,6 +1,6 @@
 import "./JobCard.scss";
 import Button from "../Button/Button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { JobCardInterface } from "../../interfaces/interface";
 import EditIcon from "../../assets/icons/edit-circle.svg";
 
@@ -24,7 +24,7 @@ function JobCard({
   job_position,
   date,
   status,
-}: JobCardInterface) {
+}: JobCardInterface): JSX.Element {
   const navigate = useNavigate();
 
   function handleJobDetails(event: MouseEvent) {
@@ -37,7 +37,9 @@ function JobCard({
       <div className="jobCard-container">
         <div className="jobCard__company-container">
           <h2 className="jobCard__company">{company_name}</h2>
-          <img className="jobCard__edit" src={EditIcon} alt="Edit icon" />
+          <Link to={`/editjob/${id}`}>
+            <img className="jobCard__edit" src={EditIcon} alt="Edit icon" />
+          </Link>
         </div>
 
         <h2 className="jobCard__position">{job_position}</h2>

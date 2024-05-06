@@ -6,7 +6,7 @@ import JobForm from "../../components/JobForm/JobForm";
 import { postNewJob } from "../../services/services";
 import { useNavigate } from "react-router-dom";
 
-function AddJobPage() {
+function AddJobPage(): JSX.Element {
   // navigation hook
   const navigate = useNavigate();
 

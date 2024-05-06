@@ -17,5 +17,6 @@ export interface JobDetailsInterface {
 }
 
 export interface getNewJobProps {
-  getNewJob: JobDetailsInterface;
+  getNewJob?: JobDetailsInterface;
+  jobDetails?: JobDetailsInterface;
 }

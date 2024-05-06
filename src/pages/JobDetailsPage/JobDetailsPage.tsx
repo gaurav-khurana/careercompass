@@ -1,13 +1,13 @@
 import "./JobDetailsPage.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import { JobDetailsInterface } from "../../interfaces/interface";
 import Button from "../../components/Button/Button";
 import { getSingleJob } from "../../services/services";
 
-function JobDetailsPage() {
+function JobDetailsPage(): JSX.Element {
   const navigate = useNavigate();
 
   // navigating thru anonymous callback from btn

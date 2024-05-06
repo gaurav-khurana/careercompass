@@ -29,7 +29,7 @@ function JobCard({
 
   function handleJobDetails(event: MouseEvent) {
     console.log(event.target);
-    navigate(`/${id}`);
+    navigate(`/dashboard/${id}`);
   }
 
   return (

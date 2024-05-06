@@ -6,8 +6,11 @@ import {
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 
-function JobForm({ getNewJob }: getNewJobProps) {
+function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
+  console.log(jobDetails);
+
   // state for form
+  // const [id, setId] = useState(0);
   const [companyName, setCompanyName] = useState("");
   const [positionName, setPositionName] = useState("");
   const [date, setDate] = useState("");
@@ -19,8 +22,12 @@ function JobForm({ getNewJob }: getNewJobProps) {
   // handler to form submission
   function handleJobForm(event: React.FormEvent) {
     event.preventDefault();
+    // if (jobDetails?.id) {
+    //   setId(jobDetails.id);
+    // }
 
     if (
+      // jobDetails?.id ||
       companyName &&
       positionName &&
       date &&
@@ -30,6 +37,7 @@ function JobForm({ getNewJob }: getNewJobProps) {
       requirements
     ) {
       const newJob: JobDetailsInterface = {
+        // id: jobDetails?.id,
         company_name: companyName,
         job_position: positionName,
         date: date,
@@ -63,7 +71,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
             type="text"
             name="companyName"
             id="companyName"
-            value={companyName}
+            // value={companyName}
+            defaultValue={jobDetails?.company_name}
             // onChange={handleCompanyName}
             onChange={(event) => setCompanyName(event.target.value)}
             required
@@ -76,7 +85,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
             type="text"
             name="positionName"
             id="positionName"
-            value={positionName}
+            // value={positionName}
+            defaultValue={jobDetails?.job_position}
             // onChange={handlePositionName}
             onChange={(event) => setPositionName(event.target.value)}
             required
@@ -89,7 +99,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
             type="date"
             name="date"
             id="date"
-            value={date}
+            // value={date}
+            defaultValue={jobDetails?.date}
             // onChange={handleDate}
             onChange={(event) => setDate(event.target.value)}
             required
@@ -102,7 +113,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
             type="text"
             name="status"
             id="status"
-            value={status}
+            // value={status}
+            defaultValue={jobDetails?.status}
             // onChange={handleStatus}
             onChange={(event) => setStatus(event.target.value)}
             required
@@ -116,7 +128,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
           className="job-form__textarea"
           name="role"
           id="role"
-          value={role}
+          // value={role}
+          defaultValue={jobDetails?.role}
           cols={30}
           rows={10}
           // onChange={handleRole}
@@ -130,7 +143,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
           className="job-form__textarea"
           name="duties"
           id="duties"
-          value={duties}
+          // value={duties}
+          defaultValue={jobDetails?.duties}
           cols={30}
           rows={10}
           // onChange={handleDuties}
@@ -144,7 +158,8 @@ function JobForm({ getNewJob }: getNewJobProps) {
           className="job-form__textarea"
           name="requirements"
           id="requirements"
-          value={requirements}
+          // value={requirements}
+          defaultValue={jobDetails?.requirements}
           cols={30}
           rows={10}
           // onChange={handleRequirements}

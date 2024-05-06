@@ -31,13 +31,13 @@ function Navbar() {
 
       <SearchBar />
 
-      <Button
+      {/* <Button
         containerClassName="btn__search-container"
         buttonClassName="btn__search"
         buttonHandler={handleSearchButton}
         buttonType="button"
         buttonText="Search"
-      />
+      /> */}
       <Button
         containerClassName="btn__add-container"
         buttonClassName="btn__add"

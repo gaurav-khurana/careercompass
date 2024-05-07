@@ -23,7 +23,11 @@
     }
   }
 
-  &__applied {
+  &__logout {
+    &:hover {
+      background-color: $color-primary-red;
+      color: $color-primary-white;
+    }
   }
 
   &__details {

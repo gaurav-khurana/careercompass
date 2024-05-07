@@ -12,7 +12,7 @@ function Navbar() {
     navigate("/addjob");
   }
 
-  function handleAppliedJobs(event: MouseEvent) {
+  function handleLogout(event: MouseEvent) {
     console.log(event.target);
   }
 
@@ -47,11 +47,11 @@ function Navbar() {
       />
 
       <Button
-        containerClassName="btn__applied-container"
-        buttonClassName="btn__applied"
-        buttonHandler={handleAppliedJobs}
+        containerClassName="btn__logout-container"
+        buttonClassName="btn__logout"
+        buttonHandler={handleLogout}
         buttonType="button"
-        buttonText="Applied Jobs"
+        buttonText="Logout"
       />
     </div>
   );

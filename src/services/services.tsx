@@ -1,5 +1,17 @@
 import axios from "axios";
-import { JobDetailsInterface } from "../interfaces/interface";
+import {
+  JobDetailsInterface,
+  userDetailsInterface,
+} from "../interfaces/interface";
+
+export async function login(loginDetails: userDetailsInterface) {
+  const response = await axios.post(
+    "http://localhost:8080/login",
+    loginDetails
+  );
+  console.log(response.data.token);
+  return response.data.token;
+}
 
 export async function getAllJobs() {
   const response = await axios.get("http://localhost:8080/dashboard");

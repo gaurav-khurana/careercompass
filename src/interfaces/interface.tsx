@@ -20,3 +20,8 @@ export interface getNewJobProps {
   getNewJob?: JobDetailsInterface;
   jobDetails?: JobDetailsInterface;
 }
+
+export interface userDetailsInterface {
+  username: string;
+  password: string;
+}

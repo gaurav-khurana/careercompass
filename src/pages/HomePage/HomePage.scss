@@ -2,10 +2,22 @@
 @use "../../stylesPartials/mixins" as *;
 
 .homepage {
-  &-container {
+  @include flexbox(row, center, center);
+
+  &-container-1 {
     height: 100vh;
-    width: 100vw;
+    width: 60vw;
     background-color: $color-secondary-light-blue;
+
+    @include flexbox(column, center, center);
+  }
+
+  &-container-2 {
+    height: 100vh;
+    width: 40vw;
+    background-color: $color-secondary-light-blue;
+    background-color: $color-secondary-dark-blue;
+    color: $color-primary-white;
 
     @include flexbox(column, center, center);
   }
@@ -26,13 +38,40 @@
 
   &__button {
     // width: 15vw;
+    width: 100%;
     padding: $padding-small;
+    border: 0;
+    border-radius: $button-radius;
     cursor: pointer;
 
     &:hover {
       background-color: $color-secondary-dark-blue;
       color: white;
       border: 0;
+    }
+  }
+}
+
+.login-form {
+  @include flexbox(column, center, flex-start);
+
+  &__title {
+    color: $color-primary-white;
+  }
+
+  &__label {
+    margin-bottom: $spacing-small;
+  }
+
+  &__input {
+    margin-bottom: $spacing-big;
+    border-radius: $button-radius;
+    padding: $spacing-small;
+    color: $color-secondary-dark-grey;
+    border: 0;
+
+    &::placeholder {
+      padding-top: 1rem;
     }
   }
 }

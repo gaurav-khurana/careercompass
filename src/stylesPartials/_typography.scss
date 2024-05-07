@@ -16,7 +16,8 @@
   font-weight: 600;
 }
 
-.homepage__title {
+.homepage__title,
+.login-form__title {
   font-size: $mob-font-heading;
   line-height: 10rem;
   font-weight: 600;
@@ -36,6 +37,8 @@
 }
 
 .homepage__subtext,
+.login-form__label,
+.login-form__input,
 .jobCard__company,
 .jobCard__position,
 .jobCard__status,
@@ -48,7 +51,7 @@
 .homepage__button,
 .btn__search,
 .btn__add,
-.btn__applied,
+.btn__logout,
 .btn__details,
 .btn__jobDetails,
 .btn__job-form,

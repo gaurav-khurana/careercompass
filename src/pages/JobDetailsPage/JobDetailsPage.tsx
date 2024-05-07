@@ -10,14 +10,10 @@ import { getSingleJob } from "../../services/services";
 function JobDetailsPage(): JSX.Element {
   const navigate = useNavigate();
 
-  // navigating thru anonymous callback from btn
-  // function handleJobDetails() {
-  //   navigate("/dashboard");
-  // }
-
   // axios call to job details by id
   const id = useParams();
   console.log(id.id);
+
   // convert value from params frm str to num & store to pass to load job
   const jobId: number = Number(id.id);
 
@@ -30,20 +26,8 @@ function JobDetailsPage(): JSX.Element {
   };
 
   useEffect(() => {
-    // async function getSingleJob() {
-    //   const response = await axios.get(
-    //     `http://localhost:8080/dashboard/${id.id}`
-    //   );
-
-    //   console.log(response.data);
-
-    //   setSingleJob(response.data);
-    // }
-
-    // getSingleJob();
     loadSingleJob(jobId);
   }, [jobId]);
-  // }, [id.id]);
 
   return (
     <>

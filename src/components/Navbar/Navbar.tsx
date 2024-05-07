@@ -14,11 +14,11 @@ function Navbar() {
 
   function handleLogout(event: MouseEvent) {
     console.log(event.target);
+    localStorage.removeItem("token");
+    alert("Logout Successful");
+    navigate("/");
   }
 
-  function handleSearchButton(event: MouseEvent) {
-    console.log(event.target);
-  }
   return (
     <div className="navbar-container">
       <Link to="/">
@@ -31,13 +31,6 @@ function Navbar() {
 
       <SearchBar />
 
-      {/* <Button
-        containerClassName="btn__search-container"
-        buttonClassName="btn__search"
-        buttonHandler={handleSearchButton}
-        buttonType="button"
-        buttonText="Search"
-      /> */}
       <Button
         containerClassName="btn__add-container"
         buttonClassName="btn__add"

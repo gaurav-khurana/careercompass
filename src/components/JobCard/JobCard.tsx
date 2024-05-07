@@ -4,20 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { JobCardInterface } from "../../interfaces/interface";
 import EditIcon from "../../assets/icons/edit-circle.svg";
 
-// interface Props {
-//   id: number;
-//   company_name: string;
-//   job_position: string;
-//   date: string;
-//   status: string;
-// }
-
-//  option 1 for interface use function JobCard({ job }: Props) {}
-//  and from parent pass entire job obj down as props
-// interface Props {
-//   job: any;
-// }
-
 function JobCard({
   id,
   company_name,

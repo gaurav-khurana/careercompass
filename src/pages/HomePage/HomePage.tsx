@@ -1,8 +1,6 @@
 import "./HomePage.scss";
-// import logo from "../../assets/images/compass logo.jpeg";
 import logo from "../../assets/images/compasslogo2.png";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { userDetailsInterface } from "../../interfaces/interface";
 import { login } from "../../services/services";
 
@@ -28,9 +26,6 @@ function HomePage() {
   // get login details frm login form
   async function handleLogin(event: React.FormEvent) {
     event.preventDefault();
-    // console.log(event.target);
-    // console.log(event.target.username.value);
-    // console.log(event.target.password.value);
 
     const username: string = event.target.username.value;
     const password: string = event.target.password.value;
@@ -62,8 +57,6 @@ function HomePage() {
 
   return (
     <>
-      {/* <div>HomePage</div> */}
-
       <div className="homepage">
         <div className="homepage-container-1">
           <img
@@ -73,11 +66,6 @@ function HomePage() {
           />
           <h1 className="homepage__title">Career Compass</h1>
           <h2 className="homepage__subtext">The North Star to your Career</h2>
-          <Link to={"/dashboard"}>
-            <button className="homepage__button" type="button">
-              Open My Board
-            </button>
-          </Link>
         </div>
 
         <div className="homepage-container-2">

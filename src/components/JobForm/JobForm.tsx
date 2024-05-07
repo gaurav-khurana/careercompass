@@ -9,8 +9,11 @@ import { useNavigate } from "react-router-dom";
 function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
   console.log(jobDetails);
 
+  // navigation hook
+  const navigate = useNavigate();
+
   // state for form
-  // const [id, setId] = useState(0);
+
   const [companyName, setCompanyName] = useState("");
   const [positionName, setPositionName] = useState("");
   const [date, setDate] = useState("");
@@ -22,12 +25,8 @@ function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
   // handler to form submission
   function handleJobForm(event: React.FormEvent) {
     event.preventDefault();
-    // if (jobDetails?.id) {
-    //   setId(jobDetails.id);
-    // }
 
     if (
-      // jobDetails?.id ||
       companyName &&
       positionName &&
       date &&
@@ -37,7 +36,6 @@ function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
       requirements
     ) {
       const newJob: JobDetailsInterface = {
-        // id: jobDetails?.id,
         company_name: companyName,
         job_position: positionName,
         date: date,
@@ -51,15 +49,6 @@ function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
       getNewJob(newJob);
     }
   }
-
-  // navigation hook
-  const navigate = useNavigate();
-
-  // handler to cancel form (anon callback from btn)
-  // function handleCancelForm() {
-  //   // console.log(event.target);
-  //   navigate("/dashboard");
-  // }
 
   return (
     <>

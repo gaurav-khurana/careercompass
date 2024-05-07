@@ -4,7 +4,6 @@
 .jobs {
   &-container {
     width: 100vw;
-    // height: 90vh;
     background-color: rgba(124, 175, 196, 0.5);
 
     @include flexbox(row, flex-start, flex-start);

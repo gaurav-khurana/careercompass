@@ -38,10 +38,12 @@ function SearchBar() {
     );
     console.log(filteredResult);
     // setFoundJob(filteredResult);
+
     if (!filteredResult) {
       alert("Job posting not found");
       return;
     }
+
     navigate(`/dashboard/${filteredResult?.id}`);
     // return allJobsData;
     // return (

@@ -4,6 +4,8 @@ import {
   userDetailsInterface,
 } from "../interfaces/interface";
 
+const token = localStorage.getItem("token");
+
 export async function login(loginDetails: userDetailsInterface) {
   const response = await axios.post(
     "http://localhost:8080/login",
@@ -14,19 +16,27 @@ export async function login(loginDetails: userDetailsInterface) {
 }
 
 export async function getAllJobs() {
-  const response = await axios.get("http://localhost:8080/dashboard");
+  const response = await axios.get("http://localhost:8080/dashboard", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   console.log(response.data);
   return response.data;
 }
 
 export async function getSingleJob(id: number) {
-  const response = await axios.get(`http://localhost:8080/dashboard/${id}`);
+  const response = await axios.get(`http://localhost:8080/dashboard/${id}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
   console.log(response.data);
   return response.data;
 }
 
 export async function postNewJob(newJob: JobDetailsInterface) {
-  const response = await axios.post("http://localhost:8080/dashboard", newJob);
+  const response = await axios.post("http://localhost:8080/dashboard", newJob, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
   console.log(response);
   return response.data;
 }
@@ -34,7 +44,8 @@ export async function postNewJob(newJob: JobDetailsInterface) {
 export async function editJobPosting(newJob: JobDetailsInterface, id: number) {
   const response = await axios.put(
     `http://localhost:8080/dashboard/${id}`,
-    newJob
+    newJob,
+    { headers: { Authorization: `Bearer ${token}` } }
   );
   console.log(response.data);
   return response.data;

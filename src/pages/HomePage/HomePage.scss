@@ -38,15 +38,20 @@
 
   &__button {
     width: 100%;
+    height: 5.6rem;
     padding: $padding-small;
+    margin-top: $spacing-big;
     border: 0;
     border-radius: $button-radius;
     cursor: pointer;
 
-    &:hover {
-      background-color: $color-secondary-dark-blue;
+    &:hover,
+    &:focus {
+      background-color: $color-secondary-light-blue;
       color: white;
       border: 0;
+      outline: 0;
+      font-weight: 600;
     }
   }
 }
@@ -63,14 +68,20 @@
   }
 
   &__input {
+    height: 5.6rem;
     margin-bottom: $spacing-big;
     border-radius: $button-radius;
     padding: $spacing-small;
+    padding-left: $padding-big;
     color: $color-secondary-dark-grey;
     border: 0;
 
     &::placeholder {
       padding-top: 1rem;
+    }
+
+    &:focus {
+      outline: 0;
     }
   }
 }

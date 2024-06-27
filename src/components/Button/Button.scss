@@ -6,12 +6,15 @@
   width: 10vw;
   border-radius: $button-radius;
   border: 0;
+  padding-top: 0.4rem;
   cursor: pointer;
   transition: 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $color-secondary-dark-blue;
     color: $color-primary-white;
+    outline: 0;
   }
 
   &__search {
@@ -24,7 +27,10 @@
   }
 
   &__logout {
-    &:hover {
+    margin-right: $spacing-big;
+
+    &:hover,
+    &:focus {
       background-color: $color-primary-red;
       color: $color-primary-white;
     }
@@ -33,14 +39,22 @@
   &__details {
     width: 13.5vw;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-secondary-light-blue;
       color: $color-primary-white;
     }
   }
 
-  &__job-form {
+  &__job-form,
+  &__cancel {
     margin-inline: auto;
     margin-right: $spacing-small;
+
+    &:hover,
+    &:focus {
+      background-color: $color-primary-red;
+      color: $color-primary-white;
+    }
   }
 }

@@ -4,7 +4,7 @@
 .job-form {
   width: 30vw;
   margin-inline: auto;
-  @include flexbox(column, flex-start, flex-start);
+  @include flexbox(column, space-between, flex-start);
 
   &-container {
     width: 100vw;
@@ -15,8 +15,10 @@
   }
 
   &-btn-container {
-    @include flexbox(row, flex-start, flex-start);
+    width: 25vw;
     margin-inline: auto;
+
+    @include flexbox(row, space-between, flex-start);
   }
   &__title {
     margin-inline: auto;

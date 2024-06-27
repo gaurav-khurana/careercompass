@@ -158,14 +158,14 @@ function JobForm({ getNewJob, jobDetails }: getNewJobProps) {
         <div className="job-form-btn-container">
           <Button
             containerClassName="job-form__button--reset"
-            buttonClassName="btn__job-form"
+            buttonClassName="btn__cancel"
             buttonType="reset"
             buttonText="Cancel"
             // buttonHandler={handleCancelForm}
             buttonHandler={() => navigate("/dashboard")}
           />
 
-          <button className="btn btn__job-form" type="submit">
+          <button className="btn btn__add-job" type="submit">
             Add Job
           </button>
         </div>
